@@ -34,6 +34,7 @@
       <th scope="col">Gender</th>
       <th scope="col">Course</th>
       <th scope="col">Phone_Number</th>
+      <th scope="col">Actions</th>
 
 
 
@@ -52,17 +53,35 @@
     echo "<td>".$row['gender']."</td>";
     echo "<td>".$row['course']."</td>";
     echo "<td>".$row['phone_no']."</td>";
+    echo "<td> <a class='btn btn-primary' href='edit.php?id=".$row['id']."'  role='button'>Edit</a>   </td>";
+    echo "<td> <a class='btn btn-primary' href='delete.php?id=".$row['id']."' role='button' onclick='return confirmDelete()'>Delete</a>   </td>";
+    ;
+
     echo "</tr>";
 
 
    }
    
    ?>
+
+   
+
+   <script>
+    const confirmDelete = () => {
+        return confirm("Are you sure you want to delete this record?");
+        }
+   </script>
+
+
     
   </tbody>
 </table>
+
         </div>
- 
+        <div>
+   <a class="btn btn-primary" href="index.php" role="button">Bact To Registration</a>
+
+   </div>
     </div>
 </div>
    

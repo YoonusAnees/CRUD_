@@ -16,7 +16,7 @@ $Phone_No = $_POST["phone_no"];
 $sql = "INSERT INTO `crud`(`first_name`, `last_name`, `email`, `course`, `gender`, `phone_no`) VALUES ('$first_name','$last_name','$Email','$Course','$Gender','$Phone_No')";
 $result= mysqli_query($connection, $sql);
 if($result){
-    header("Location:main.php");
+    header("Location:read.php");
 }else{
     echo "Failed to insert data";
     die(mysqli_error($connection));
@@ -89,6 +89,7 @@ if($result){
                 <input type="text" class="form-control" id="phone" name="phone_no" required>
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary">Registrarse</button>
+                <a class="btn btn-primary" href="read.php" role="button">see all</a>
             </form>
         </div>
     </div>
